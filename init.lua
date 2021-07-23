@@ -1,6 +1,8 @@
+-- ***
 -- Glowshrooms mod
 -- by rudzik8
--- version 1.4.0-dev
+-- version 1.4.1
+-- ***
 
 -- загружены ли поддерживаемые моды?
 local ttmod = minetest.global_exists("tt")
@@ -15,7 +17,7 @@ minetest.register_node("glowshrooms:glowshroom_green", {
 	inventory_image = "glowshrooms_glowshroom_green.png",
 	walkable = false,
 	buildable_to = true,
-	light_source = 5,
+	light_source = 4,
 	paramtype = 'light',
 	sounds = default.node_sound_leaves_defaults(),
 	selection_box = {
@@ -31,7 +33,7 @@ minetest.register_node("glowshrooms:glowshroom_blue", {
 	inventory_image = "glowshrooms_glowshroom_blue.png",
 	walkable = false,
 	buildable_to = true,
-	light_source = 5,
+	light_source = 4,
 	paramtype = 'light',
 	sounds = default.node_sound_leaves_defaults(),
 	selection_box = {
@@ -47,7 +49,7 @@ minetest.register_node("glowshrooms:glowshroom_red", {
 	inventory_image = "glowshrooms_glowshroom_red.png",
 	walkable = false,
 	buildable_to = true,
-	light_source = 5,
+	light_source = 4,
 	paramtype = 'light',
 	sounds = default.node_sound_leaves_defaults(),
 	selection_box = {
@@ -135,7 +137,7 @@ minetest.register_decoration({
 if ttmod then
 	tt.register_snippet(function(itemstring)
 		if minetest.get_item_group(itemstring, "glowshroom") == 1 then
-			return "Glows. Spawns at the top (or in) caves"
+			return "Glows. Spawns at the top (or in) of caves"
 		end
 	end)
 end
