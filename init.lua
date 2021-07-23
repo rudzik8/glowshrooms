@@ -140,26 +140,10 @@ if ttmod then
 	end)
 end
 
--- вот эта часть новая, добавленная недавно (требует отладки)
 if lbmod then
 	lucky_block:add_blocks({
-		{"nod", "glowshrooms:glowshroom_green", 0},
-		{"dro", {"glowshrooms:glowshroom_green"}, 5},
-		{"nod", "glowshrooms:glowshroom_blue", 0},
-		{"dro", {"glowshrooms:glowshroom_blue"}, 4},
-		{"nod", "glowshrooms:glowshroom_red", 0},
-		{"dro", {"glowshrooms:glowshroom_red"}, 3},
+		{"dro", {"glowshrooms:glowshroom_green_cooked"}, 5},
+		{"dro", {"glowshrooms:glowshroom_blue_cooked"}, 4},
+		{"dro", {"glowshrooms:glowshroom_red_cooked"}, 3},
 	})
 end
-
--- <> x *=*=TODO=*=* x <>
---
--- в первую очередь
--- - проверить работу мода lucky_block, если всё получится как с awards, то идёт оно нахуй
--- - убедиться, что всё работает как прежде
--- во вторую
--- - попробовать заново прикрутить авард, используя существующую иконку
---
--- вооот. вместо минусиков плюсики поставлю
-
--- да, комментарии на русском, и что? это в любом случае лучше чем без комментариев вовсе.
