@@ -1,12 +1,13 @@
 -- ***
 -- Glowshrooms mod
 -- by rudzik8
--- version 1.4.1
+-- version 1.5.0-dev
 -- ***
 
 -- загружены ли поддерживаемые моды?
 local ttmod = minetest.global_exists("tt")
 local lbmod = minetest.global_exists("lucky_block")
+local awmod = minetest.global_exists("awards")
 
 -- описываем кто такие светогрибы и что они делают
 minetest.register_node("glowshrooms:glowshroom_green", {
@@ -147,5 +148,16 @@ if lbmod then
 		{"dro", {"glowshrooms:glowshroom_green_cooked"}, 5},
 		{"dro", {"glowshrooms:glowshroom_blue_cooked"}, 4},
 		{"dro", {"glowshrooms:glowshroom_red_cooked"}, 3},
+	})
+end
+
+if awmod then
+	awards.register_award("glowshrooms:award", {
+		description = "Is This a Toadstool?",
+		trigger = {
+			type   = "dig",
+			node   = "glowshrooms:glowshroom_red",
+			target = 1,
+		},
 	})
 end
