@@ -8,3 +8,5 @@ This mod adds green, blue and red glowshrooms to the MTG. You can cook a glowshr
 *(You can do it with each type of glowshrooms)*
 
 ![Recipe](https://content.minetest.net/uploads/cb9c6d019c.png)
+
+[![ContentDB](https://content.minetest.net/packages/rudzik8/glowshrooms/shields/downloads/)](https://content.minetest.net/packages/rudzik8/glowshrooms/)
