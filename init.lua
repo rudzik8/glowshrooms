@@ -7,7 +7,7 @@
 -- загружены ли поддерживаемые моды?
 local ttmod = minetest.global_exists("tt")
 local lbmod = minetest.global_exists("lucky_block")
-local awmod = minetest.global_exists("awards")
+local dymod = minetest.global_exists("dye")
 
 -- описываем кто такие светогрибы и что они делают
 minetest.register_node("glowshrooms:glowshroom_green", {
@@ -93,7 +93,7 @@ minetest.register_craft({
     recipe = "glowshrooms:glowshroom_red",
     cooktime = 7,
 })
--- NEW: засахаренные светогрибы и как их делать
+-- засахаренные светогрибы и как их делать
 minetest.register_craftitem("glowshrooms:glowshroom_green_candied", {
     description = "Candied green glowshroom",
     inventory_image = "glowshrooms_glowshroom_green_candied.png",
@@ -141,6 +141,9 @@ minetest.register_alias("glowshroom_red", "glowshrooms:glowshroom_red")
 minetest.register_alias("glowshroom_green_cooked", "glowshrooms:glowshroom_green_cooked")
 minetest.register_alias("glowshroom_blue_cooked", "glowshrooms:glowshroom_blue_cooked")
 minetest.register_alias("glowshroom_red_cooked", "glowshrooms:glowshroom_red_cooked")
+minetest.register_alias("glowshroom_green_candied", "glowshrooms:glowshroom_green_candied")
+minetest.register_alias("glowshroom_blue_candied", "glowshrooms:glowshroom_blue_candied")
+minetest.register_alias("glowshroom_red_candied", "glowshrooms:glowshroom_red_candied")
 
 -- делаем так, чтобы светогрибы появлялись в мире
 minetest.register_decoration({
@@ -193,14 +196,27 @@ if lbmod then
 		{"dro", {"glowshrooms:glowshroom_red_candied"}, 3},
 	})
 end
--- часть с awards не работает
-if awmod then
-	awards.register_award("glowshrooms:award", {
-		description = "Is This a Toadstool?",
-		trigger = {
-			type   = "dig",
-			node   = "glowshrooms:glowshroom_red",
-			target = 1,
+
+if dymod then
+	minetest.register_craft({
+		type = "shapeless",
+		output = "dye:green",
+		recipe = {
+			"glowshrooms:glowshroom_green",
+		},
+	})
+	minetest.register_craft({
+		type = "shapeless",
+		output = "dye:blue",
+		recipe = {
+			"glowshrooms:glowshroom_blue",
+		},
+	})
+	minetest.register_craft({
+		type = "shapeless",
+		output = "dye:red",
+		recipe = {
+			"glowshrooms:glowshroom_red",
 		},
 	})
 end
