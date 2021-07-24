@@ -93,6 +93,46 @@ minetest.register_craft({
     recipe = "glowshrooms:glowshroom_red",
     cooktime = 7,
 })
+-- NEW: засахаренные светогрибы и как их делать
+minetest.register_craftitem("glowshrooms:glowshroom_green_candied", {
+    description = "Candied green glowshroom",
+    inventory_image = "glowshrooms_glowshroom_green_candied.png",
+    on_use = minetest.item_eat(2),
+})
+minetest.register_craftitem("glowshrooms:glowshroom_blue_candied", {
+    description = "Candied blue glowshroom",
+    inventory_image = "glowshrooms_glowshroom_blue_candied.png",
+    on_use = minetest.item_eat(3), 
+})
+minetest.register_craftitem("glowshrooms:glowshroom_red_candied", {
+    description = "Candied red glowshroom",
+    inventory_image = "glowshrooms_glowshroom_red_candied.png",
+    on_use = minetest.item_eat(4),
+})
+minetest.register_craft({
+    type = "shapeless",
+    output = "glowshrooms:glowshroom_green_candied",
+    recipe = {
+        "glowshrooms:glowshroom_green",
+        "farming:sugar",
+    },
+})
+minetest.register_craft({
+    type = "shapeless",
+    output = "glowshrooms:glowshroom_blue_candied",
+    recipe = {
+        "glowshrooms:glowshroom_blue",
+        "farming:sugar",
+    },
+})
+minetest.register_craft({
+    type = "shapeless",
+    output = "glowshrooms:glowshroom_blue_candied",
+    recipe = {
+        "glowshrooms:glowshroom_blue",
+        "farming:sugar",
+    },
+})
 
 -- определяем ярлычки для того, чтобы юзеру было полегче
 minetest.register_alias("glowshroom_green", "glowshrooms:glowshroom_green")
@@ -108,7 +148,7 @@ minetest.register_decoration({
     place_on = {"default:stone"},
     sidelen = 16,
 	biomes = {"underground"},
-    fill_ratio = 0.3,
+    fill_ratio = 0.4,
 	y_max = -15,
     y_min = -2000,
     decoration = "glowshrooms:glowshroom_green",
@@ -118,7 +158,7 @@ minetest.register_decoration({
     place_on = {"default:stone"},
     sidelen = 16,
 	biomes = {"underground"},
-    fill_ratio = 0.2,
+    fill_ratio = 0.3,
 	y_max = -15,
     y_min = -2000,
     decoration = "glowshrooms:glowshroom_blue",
@@ -128,7 +168,7 @@ minetest.register_decoration({
     place_on = {"default:stone"},
     sidelen = 16,
 	biomes = {"underground"},
-    fill_ratio = 0.1,
+    fill_ratio = 0.2,
 	y_max = -15,
     y_min = -2000,
     decoration = "glowshrooms:glowshroom_red",
@@ -145,12 +185,15 @@ end
 
 if lbmod then
 	lucky_block:add_blocks({
-		{"dro", {"glowshrooms:glowshroom_green_cooked"}, 5},
-		{"dro", {"glowshrooms:glowshroom_blue_cooked"}, 4},
-		{"dro", {"glowshrooms:glowshroom_red_cooked"}, 3},
+		{"dro", {"glowshrooms:glowshroom_green_cooked"}, 4},
+		{"dro", {"glowshrooms:glowshroom_blue_cooked"}, 3},
+		{"dro", {"glowshrooms:glowshroom_red_cooked"}, 2},
+		{"dro", {"glowshrooms:glowshroom_green_candied"}, 5},
+		{"dro", {"glowshrooms:glowshroom_blue_candied"}, 4},
+		{"dro", {"glowshrooms:glowshroom_red_candied"}, 3},
 	})
 end
-
+-- часть с awards не работает
 if awmod then
 	awards.register_award("glowshrooms:award", {
 		description = "Is This a Toadstool?",
