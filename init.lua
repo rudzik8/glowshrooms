@@ -127,9 +127,9 @@ minetest.register_craft({
 })
 minetest.register_craft({
     type = "shapeless",
-    output = "glowshrooms:glowshroom_blue_candied",
+    output = "glowshrooms:glowshroom_red_candied",
     recipe = {
-        "glowshrooms:glowshroom_blue",
+        "glowshrooms:glowshroom_red",
         "farming:sugar",
     },
 })
