@@ -1,7 +1,7 @@
 -- ***
 -- Glowshrooms mod
 -- by rudzik8
--- version 1.5.0-dev
+-- version 1.5.0
 -- ***
 
 -- загружены ли поддерживаемые моды?
