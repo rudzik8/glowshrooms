@@ -1,8 +1,31 @@
 -- ***
 -- Glowshrooms mod
 -- by rudzik8
--- version 1.5.0-dev
+-- version 2.0.0-dev
 -- ***
+
+-- нэймспейс для функций
+glowshrooms = {}
+
+-- NEW: функция для регистрации светогрибов
+local function add_glowshroom(name, desc)
+	minetest.register_node("glowshrooms:" .. name, {
+		description = desc,
+		drawtype = "plantlike",
+		groups = {snappy = 3, glowshroom = 1},
+		tiles = {"glowshrooms_glowshroom_" .. name .. ".png"},
+		inventory_image = "glowshrooms_glowshroom_" .. name .. ".png",
+		walkable = false,
+		buildable_to = true,
+		light_source = 4,
+		paramtype = 'light',
+		sounds = default.node_sound_leaves_defaults(),
+		selection_box = {
+			type = "fixed",
+			fixed = {-4 / 16, -0.5, -4 / 16, 4 / 16, -1 / 16, 4 / 16},
+		}
+	})
+end
 
 -- загружены ли поддерживаемые моды?
 local ttmod = minetest.global_exists("tt")
